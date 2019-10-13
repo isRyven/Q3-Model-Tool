@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>ET Model Tool - ASE To MD3</TITLE>
+<LINK rel="stylesheet" type="text/css" href="normal.css">
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<TABLE border="0" cellspacing="0" rowspacing="3" cols="1">
+	<TR class=BG1T><TD class=BG1T colspan=2>Converting .ASE To .MD3</TD></TR>
+	<TR class=BG0><TD>You can convert the 3D-Studio .ASE-files to MD3.<BR>
+	ASE stands for <I>ASCII Scene Export</I>, and it is a really old file-format.<BR>
+	I wasn't aware of it, but ASE seems to support animation. However, this version of the tool does not yet support animated ASE-models.<BR>
+	<BR>
+	To import an ASE, select the choice from the menu:<BR>
+	"Load ASE From File..."</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ASE_0.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>Then select the file You want to read, and convert into MD3.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ASE_1.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>The model is converted into MD3</TD></TR>
+	<TR class=BG0><TD>Here is the model after it has been read, and converted:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ASE_2.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Texturing</TD></TR>
+	<TR class=BG0><TD>As You can see, this example model is not textured yet.<BR>
+	It has some shadernames assigned, but none of the textures could be located by this tool. Allthough the current shadernames imply the model is used in some kind of Quake-game, they are no ET shaders or textures.<BR>
+	This is often the case, because ASE-models are not native to ET, and textures can come from many locations.<BR>
+	<BR>
+	Here You see that i have selected a surface on the 'Surfaces'-Tab. It is my intention to change the shadername so it points to a new, custom texture.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ASE_3.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Changing the shadername for a surface</TD></TR>
+	<TR class=BG0><TD>Type in the name of the shader. This can also be the name of a texture.<BR>
+	You must also include the relative path of where the model later will be inside Your PK3. My example model will be placed in a folder called 'models/ase', and my texture is called 'testtexture.jpg'.</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD class=TDnote>If You want to see the model textured with Your own custom textures, You need to put the textures in the same folder as where You load the model from.<BR>
+	So, model.ase & any <B>custom</B> textures must be in the same folder.</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>Be sure to press the ENTER-key after You typed-in the new name of the shader.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ASE_4.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Pressing ENTER to confirm changes</TD></TR>
+	<TR class=BG0><TD>After pressing the ENTER-key, the new texture will be loaded immediately.<BR>
+	The texture-preview will show the found texture.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ASE_5.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Viewing the model</TD></TR>
+	<TR class=BG0><TD>After changing the shadername of a surface, the new texture is mapped onto the surface in the 3D-View.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ASE_6.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Thanks</TD></TR>
+	<TR class=BG0><TD>Thanks to <B>Ken 'kat' Beyer</B> who has created the ASE.<BR>
+	<A href="http://www.katsbits.com/" target=_blank>http://www.katsbits.com</A><BR>
+	<BR>
+	<BR>
+	The original model looks, of course, more beautiful with the intended textures.<BR>
+	You can see an image of how it is supposed to look: <A href="http://www.katsbits.com/htm/models/kt_brokensteps.htm" target=_blank>The textured model</A></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>

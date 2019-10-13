@@ -1,0 +1,122 @@
+BODY {
+	background-color:#F9F9FF;
+	cursor:default;
+}
+TD {
+	font-family:verdana;
+	font-weight:normal;
+	font-size:smaller;
+	font-color:#000000;
+	cursor:default;
+}
+A:link {
+	color:#000000;
+}
+A:visited {
+	color:#49334F;
+}
+A:hover {
+	color:#89738F;
+}
+INPUT {
+	background-color:#D9C3DF;
+}
+IMG {
+	margin:6px 0px 6px 26px;
+}
+.IMGlogo {
+	margin:0px 20px 0px 0px;
+	position:relative;
+	top:2px;
+}
+.BODY0 {
+	margin:0px 0px 0px 0px;
+	background-color:#D9C3DF;
+	padding:0px 0px 0px 0px;
+	cursor:default;
+}
+.BODY1 {
+	background-color:#89738F;
+	cursor:default;
+}
+.BG0 {
+	background-color:#F9F9FF;
+	cursor:default;
+}
+.BG1 {
+	background-color:#D9C3DF;
+	cursor:default;
+}
+.BG1T {
+	border-width:0px 0px 0px 6px;
+	border-style:none none none solid;
+	border-color:#E9E9EA;
+	background-color:#D9C3DF;
+	padding:4px 20px 4px 20px;
+	font-family:verdana;
+	font-weight:normal;
+	font-size:medium;
+	font-color:#000000;
+	cursor:default;
+}
+.TDnote {
+	background-color:#E9E9EA;
+	padding:8px 20px 8px 20px;
+	font-family:verdana;
+	font-weight:normal;
+	font-color:#000000;
+	text-align:left;
+	cursor:default;
+}
+.TR1T {
+	background-color:#D9C3DF;
+	padding:0px 20px 0px 20px;
+	font-family:verdana;
+	font-weight:normal;
+	font-size:medium;
+	font-color:#000000;
+	cursor:default;
+}
+.DECOL {
+	background-color:#D9C3DF;
+	background-image:url(img/decoL.jpg);
+	background-position:right;
+	background-repeat:no-repeat;
+	padding:0px 20px 0px 20px;
+	font-family:verdana;
+	font-weight:normal;
+	font-size:medium;
+	font-color:#000000;
+	cursor:default;
+}
+.DECOR {
+	background-color:#D9C3DF;
+	background-image:url(img/decoR.jpg);
+	background-position:left;
+	background-repeat:no-repeat;
+	padding:0px 20px 0px 20px;
+	font-family:verdana;
+	font-weight:normal;
+	font-size:medium;
+	font-color:#000000;
+	cursor:default;
+}
+.TD0 {
+	padding:4px 20px 0px 20px;
+	font-family:verdana;
+	font-weight:normal;
+	font-color:#000000;
+	text-align:left;
+	cursor:default;
+}
+.TD0L {
+	border-width:1px 0px 0px 0px;
+	border-style:solid none none none;
+	border-color:#E9E9EA;
+	padding:4px 20px 0px 20px;
+	font-family:verdana;
+	font-weight:normal;
+	font-color:#000000;
+	text-align:left;
+	cursor:default;
+}

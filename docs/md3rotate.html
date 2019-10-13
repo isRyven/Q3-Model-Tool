@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>ET Model Tool - Rotating MD3</TITLE>
+<LINK rel="stylesheet" type="text/css" href="normal.css">
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<TABLE border="0" cellspacing="0" rowspacing="3" cols="1">
+	<TR class=BG1T><TD class=BG1T colspan=2>Rotating an MD3</TD></TR>
+	<TR class=BG0><TD>Rotating a model, by changing the 3D-View with the mouse (and/or keys), is only effective on-screen; It does not change the model itself. Sometimes You want to rotate a model, so when loaded into Radiant, it will face into another direction.<BR>
+	Suppose You have an upside-down model and created a misc_gamemodel (or misc_model) in Radiant. The misc_gamemodel is easily rotated in Radiant, but when You would load that MD3 in a script_mover it would still be upside-down. You can correct the model by rotating it 180 degrees around the X-axis. After that, it will be loaded correctly into a script_mover.</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD class=TDnote>Note:<BR>
+	Rotating an MD3 is functional for any MD3, animated and/or non-animated.<BR>
+	Any existing tags will also be rotated.</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>Here is a model in its initial position:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_0.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Rotating around the X-axis</TD></TR>
+	<TR class=BG0><TD>To rotate the model around an axis, make a choice from the menu.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_1.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Angle in degrees</TD></TR>
+	<TR class=BG0><TD>A little dialog will pop-up, asking for the number of degrees to rotate the model.<BR>
+	You can enter floating-point values (like 13.75 or 3.14).</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_2.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>The result after rotating the model 60 degrees around the X-axis:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_3.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Negative numbers</TD></TR>
+	<TR class=BG0><TD>It is also possible to enter negative numbers, which will rotate the model in the opposite direction.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_4.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>The result after rotating the model -45 degrees around the X-axis:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_5.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Rotating around the Y-axis</TD></TR>
+	<TR class=BG0><TD>To rotate the model around the Y-axis, make the choice from the menu.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_6.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>In the dialog, enter the angle of rotation in degrees.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_7.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>The result after rotating the model 60 degrees around the Y-axis:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_8.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Rotating around the Z-axis</TD></TR>
+	<TR class=BG0><TD>To rotate the model around the Z-axis, make the choice from the menu.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_9.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>In the dialog, enter the angle of rotation in degrees.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_10.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>The result after rotating the model 45 degrees around the Z-axis:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_11.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Tag along</TD></TR>
+	<TR class=BG0><TD>This is an example of a animated model with several tags.<BR>
+	If the model is rotated, all tags will also be rotated.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_12.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>After rotating the model 180 degrees around the X-axis, it is upside-down.. As are the tags.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/RotateMD3_13.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Thanks</TD></TR>
+	<TR class=BG0><TD>Thanks to <B>eCo|ischbinz</B> for creating the model of the E5-Blaster.<BR>
+	<A href="http://www.eco-fairplay.com/" target=_blank>www.eco-fairplay.com</A></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>

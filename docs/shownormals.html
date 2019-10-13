@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<TITLE>ET Model Tool - Showing Normals</TITLE>
+<LINK rel="stylesheet" type="text/css" href="normal.css">
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<TABLE border="0" cellspacing="0" rowspacing="3" cols="1">
+	<TR class=BG1T><TD class=BG1T colspan=2>Showing normals</TD></TR>
+	<TR class=BG0><TD>In 3D, many objects are build-up of triangles. The surface of a triangle is the area inside the 3 edges, marked by the 3 vertices that define a triangle. The surface of one triangle is always flat, and has two sides, the front- & back-side.<BR>
+	The front- & back-side of a triangle are very important in 3D-math. It is needed for lighting/shadowing triangles (and many more things).<BR>
+	A normal is the indicator of a triangle's direction, and facing away from the triangle.<BR>
+	If normals are drawn on screen, they are often attached to the triangles of which they indicate the direction. They look like pointers sticking out of the model, showing the direction of a triangle. They point away from the model.<BR>
+	To show face-normals in this tool, simply use the 'Show Normals'-checkbox.<BR>
+	The result is much like the <I>r_shownormals</I> command in Wolfenstein-ET.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ShowNormals_0.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ShowNormals_1.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG0><TD class=TDnote>Note: I try to keep this explanation simple.<BR>
+	To be more precise:<BR>
+	In 3D-math, most calculations involving normals are performed on planes, and not on faces.<BR>
+	A triangle is a face; It is a polygon with edges between several of its vertices. It has an outline, a shape with a certain size and area.<BR>
+	A plane has no edges nor a size. A plane streches into infinity. It is just a flat surface with a direction, positioned somewhere in 3D-space.<BR>
+	The mathmetical equation of a plane however, is very simple. That is why planes are used in 3D-math instead of faces.<BR>
+	<BR>
+	The complete idea behind BSP (Binary Space Partitioning) evolves on planes; Checking if something is in-front or behind a plane,.. checking for collisions..<BR>
+	<BR>
+	It is a good thing that computers are fast in performing calculations. If You realize howmany has to be calculated for just 1 frame (of many FPS), most people would think wT*!</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>

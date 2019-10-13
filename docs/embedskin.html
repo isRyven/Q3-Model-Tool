@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>ET Model Tool - Playermodel To MD3</TITLE>
+<LINK rel="stylesheet" type="text/css" href="normal.css">
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<TABLE border="0" cellspacing="0" rowspacing="3" cols="1">
+	<TR class=BG1T><TD class=BG1T colspan=2>Using a skin</TD></TR>
+	<TR class=BG0><TD>Some models are not textured, and they will be rendered all white.. They need to get a skin-file assigned, containing a reference to a shader for every surface in the model. (You'll notice that the shadernames of the surfaces are all empty).<BR>
+	In-game those models need to be textured anyway, and therefor need a skin assigned in Radiant (Key:skin, Value:path/to/file.skin).<BR>
+	This tool can embed a skin into a model. It copies the shadernames, found in the .skin-file, to each appropriate surface. The skin then becomes permanently fixed in the model, and the seperate .skin-file is no longer needed.<BR>
+	In this example i will load a model from ET, one that needs a skin, and embed the skin into the model.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/EmbedSkin_0.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Model all white</TD></TR>
+	<TR class=BG0><TD>As You can see, this model is drawn all white.<BR>
+	It needs a skin..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/EmbedSkin_1.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Surfaces without shadernames</TD></TR>
+	<TR class=BG0><TD>The model is rendered all white because there is no shadername to be found.<BR>
+	Not a single texture can be found, and therefor the model is not textured at all. The result is this white object.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/EmbedSkin_2.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Loading a skin-file</TD></TR>
+	<TR class=BG0><TD>The skins for this model are also supplied by ET. So now i load a skin-file from the game..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/EmbedSkin_3.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Selecting a proper skin</TD></TR>
+	<TR class=BG0><TD>ET's construction crates have 2 skins to choose from, one for axis & one for the allies.<BR>
+	Choose one..<BR>
+	Note: the skin-files for models are usually stored in the same folder as the model is in.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/EmbedSkin_4.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>A skin has been loaded</TD></TR>
+	<TR class=BG0><TD>Now that a skin-file is loaded, this tool can find the textures that go on the surfaces.<BR>
+	On the 'Surfaces'-Tab You can see the information on the files involved; In this case:<BR>
+	<LI type=square>Skin-file is loaded,</LI><BR>
+	<LI type=square>The skin finds the shader 'models/mapobjects/cmarker/c_box_axis' for the current surface 'crateside01',</LI><BR>
+	<LI type=square>The shader-file, containing the shader-entry, is found at 'scripts/models_mapobjects.shader',</LI><BR>
+	<LI type=square>And eventually 1 texture is found for that shader, a texture 'models/mapobjects/cmarker/axis_crate.tga'</LI></TD></TR>
+	<TR class=BG0><TD><IMG src="img/EmbedSkin_5.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>The result is a textured model.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/EmbedSkin_6.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD class=TDnote>The skin that has just been loaded, makes it able (for this tool) to find all the textures it needs to render the model.<BR>
+	However, the shadernames for all the surfaces are still empty. This means, that if You decide to save the model now, You would still have to assign a skin in Radiant. That's because the game cannot find the shadernames, and therefor no textures.<BR>
+	Note: Loading a skin-file is just for viewing a textured model in this ET-Model-Tool.<BR>
+	If You want the game to be able to skin the model, You can embed the skin into the model. This way the skin-data is copied into the model, so it becomes permanently fixed in the model.</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Embedding the skin</TD></TR>
+	<TR class=BG0><TD>Only after loading a skin, You are able to embed it into a model.<BR>
+	Since we just loaded a skin for the construction-crates, we can now select the choice from the menu:<BR>
+	"Embed skin into model..."</TD></TR>
+	<TR class=BG0><TD><IMG src="img/EmbedSkin_7.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>Confirm the embed:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/EmbedSkin_8.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Done</TD></TR>
+	<TR class=BG0><TD>The skin is now fixed in the model.<BR>
+	As You can see on the image, the surface now has its shadername set.<BR>
+	At this time You can save the model. When it is used in Radiant, as a misc_gamemodel or misc_model, it will not need that seperate .skin-file anymore. Nor does it need the Key/Value properties set for 'skin' in Radiant.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/EmbedSkin_9.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>

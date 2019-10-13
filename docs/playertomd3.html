@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<TITLE>ET Model Tool - Playermodel To MD3</TITLE>
+<LINK rel="stylesheet" type="text/css" href="normal.css">
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<TABLE border="0" cellspacing="0" rowspacing="3" cols="1">
+	<TR class=BG1T><TD class=BG1T colspan=2>Exporting playermodels to MD3</TD></TR>
+	<TR class=BG0><TD>The playermodels used in Wolfenstein-ET/RTCW are very different from the MD3-models. Playermodels have a skeleton & bones which animate. The model itself (the "skin" You see) follows the movement of the animated skeleton. MD3-models are much simpler and do not use this kind of animation.<BR>
+	Normally it is not possible to use playermodels in a map You're making in Radiant. This tool lets You convert playermodels to MD3-models, which in turn can be used in Radiant as a misc_gamemodel entity.<BR>
+	You can load two types of playermodels: MDM/MDX or MDS.<BR>
+	Note: You have to load an MDM/MDX-pair of files in 2 steps, first the model (MDM), then the animation (MDX). All ET-playermodels share the same animations (body.mdx).</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_1.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>An MDS-file contains a model and its animation, both in 1 file.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_0.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Selecting a range of frames</TD></TR>
+	<TR class=BG0><TD>Select the animation You want to export as MD3.<BR>
+	The range i have used in this example runs from frame 952 to 1132. It is a looped animation of a relaxed standing pose. You can choose to select any range You like, but be aware that the final filesize of the exported model can become quite large.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_2.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD class=TDnote>Note:<BR>
+	If You do not want to use a skin for the loaded model, You can skip a few steps now, and <A HREF="#a_exporting">go directly to step: "Exporting to MD3"</A></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Using a skin</TD></TR>
+	<TR class=BG0><TD>Playermodels are not textured, so they will be rendered all white.. They need to get a skin-file assigned, containing a reference to a shader for every surface in the model. (You can see that the shadername of the surfaces are all empty).<BR>
+	Note: For this tool it is optional to load a skin-file now; It will still export the model. But since the final (in-game) model needs to be textured anyway, and needs a skin assigned in Radiant otherwise, i will load the skin now for demonstration purposes.<BR>
+	A skin-file can be loaded from the 'Surfaces'-Tab (or via the menu if You want):</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_3.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Loading the skin-file</TD></TR>
+	<TR class=BG0><TD>The model in this example has many skins to choose from, i selected one, and load it.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_4.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Skinned model, but still no shadernames</TD></TR>
+	<TR class=BG0><TD>By now You can see a textured model on the 'View'-Tab. Also the 'Surfaces'-Tab shows the textures that are used on the model (and from where they have been obtained).<BR>
+	The needed textures have been provided by the skin-file. However, the model does still not have any shadernames assigned to its surfaces. This means that You would still have to set a skin for the model in Radiant if You want to see a textured model in-game too. The just loaded skin-file is only used by the ET-Model-Tool.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_5.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD class=TDnote>Note:<BR>
+	If You do not want to embed the skin, You can skip a few steps now, and <A HREF="#a_exporting">go directly to step: "Exporting to MD3"</A></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Embedding skins</TD></TR>
+	<TR class=BG0><TD>This tool is able to copy the shaders supplied by the skin-file into the model. This way the seperate skin-file is no longer needed in the distribution of Your model.<BR>
+	Note: It is optional to embed a skin into a model; This tool will still export the model. For demonstration purposes i will embed a skin now.<BR>
+	To make the skin permanent in the model, select the choice from the menu:<BR>
+	"Embed skin into model..."</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_6.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>Confirm the embed:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_7.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>The skin is now permanent</TD></TR>
+	<TR class=BG0><TD>When the skin-data is copied into the model, You will see that the surfaces now have been assigned a shadername.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_8.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Good looking</TD></TR>
+	<TR class=BG0><TD>After assigning a skin to a playermodel You can see the results on the 'View'-Tab.<BR>
+	This looks nice..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_9.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T id="a_exporting" name="a_exporting"><TD class=BG1T colspan=2>Exporting to MD3</TD></TR>
+	<TR class=BG0><TD>Now that the model is prepared for exporting, it''s time to select the choice from the menu:<BR>
+	"Export frames-range to MD3..."</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_10.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>Confirm the export:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_11.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Saving the model</TD></TR>
+	<TR class=BG0><TD>Give the MD3 a name and save the file.<BR>
+	Now go test it in Radiant.. :-)</TD></TR>
+	<TR class=BG0><TD><IMG src="img/ExportRange_12.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>

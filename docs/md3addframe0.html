@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<TITLE>ET Model Tool - Add Frame 0</TITLE>
+<LINK rel="stylesheet" type="text/css" href="normal.css">
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<TABLE border="0" cellspacing="0" rowspacing="3" cols="1">
+	<TR class=BG1T><TD class=BG1T colspan=2>Adding the 1st frame from another MD3</TD></TR>
+	<TR class=BG0><TD>You can combine several non-animated MD3-files into 1 animated MD3. This provides a way to make an animated MD3 from, for example, MAP-converted-models made in Radiant (which is what i will do in this example).<BR>
+	Because adding a frame from another MD3 is pretty simple, this demo will mainly focus on the construction of animation-frames from a Radiant-model.</TD></TR>
+	<TR class=BG0><TD class=TDnote>If You are only interested in adding a frame, You can <A HREF="#a_animmd3">go directly to step: "Creating the animated MD3"</A></TD></TR>
+	<TR class=BG0><TD><BR>
+	For this example i recreated (in Radiant) the model of an existing lowrider car. The original model is not animated, and therefore static. I wanted it to bump on its front-wheels.<BR>
+	The next 3 images show the brushwork in Radiant:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_0.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_1.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_2.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Radiant issues to be aware of</TD></TR>
+	<TR class=BG0><TD>There is an important thing to know, before starting to create Your own animated Radiant-models.<BR>
+	When You arbitrary rotate an object, the textures can get misaligned. This even happens when textures are locked <IMG src="img/AddFrame0_5.jpg"><BR>
+	Just take a look at what happens to the car when i rotate it a bit:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_3.jpg"></TD></TR>
+	<TR class=BG0><TD class=TDnote>The front of the car in its initial position. Textures look fine, because the model has not been rotated yet..<BR>
+	This is the model as i have created it. I mapped all textures onto this model. It is the model as seen on the first 3 images on this page.</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_4.jpg"></TD></TR>
+	<TR class=BG0><TD class=TDnote>The front of the car again, but now after rotation. Textures are misaligned, even with 'Locked Textures' <IMG src="img/AddFrame0_5.jpg">..</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>This issue with the misaligned textures can be very annoying. However, when using the 'Add frame[0] from...'-option with this tool, there is some important thing to know about the tool. Something that will make it a lot easier to create modified versions of the initial model:</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD class=TDnote>When combining MD3-files, the texture-coordinates of the first MD3-file are used for all other frames that will be added (from the other files).<BR>
+	This means that only the MD3 You start with, must have the textures aligned correctly.<BR>
+	The model(s) of the added frames may have their textures all misaligned, those texture-coordinates will be ignored anyway..</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>The plan therefore is, that the animated bumpcar will have the original Radiant-model as its first frame. This way those texture-coordinates are used for the remaining frames as well. Since my initial model's textures are correctly mapped onto the model, all following frames (with the rotated models) will be correct too.<BR>
+	However, in my case this first frame will not be part of the animation-loop. Later in-game i just skip playing the first frame of the animated MD3, so nobody will notice it's there..</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Making the seperate frames</TD></TR>
+	<TR class=BG0><TD>For this demo i have created some MD3-files. Each MD3 contains the same, but slightly rotated model.<BR>
+	I converted all the Radiant-models seperately into MD3-files. Everyone of these MD3-files is non-animated.<BR>
+	Here are the different poses of the same car:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_6.jpg" border="4"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_7.jpg" border="4"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_8.jpg" border="4"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_9.jpg" border="4"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_10.jpg" border="4"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>I stored all the MD3-files on disk. In my case, the initial, unmodified model's file is called: lowlow_bump.MD3<BR>
+	I've selected the other files too, only to show howmany files i have created for my animation.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_11.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T id=a_animmd3 name="a_animmd3"><TD class=BG1T colspan=2>Creating the animated MD3</TD></TR>
+	<TR class=BG0><TD>Now that You have all necessary files for the animation, You can start combining them into 1 animated MD3.<BR>
+	The first thing to do is loading the initial MD3.<BR>
+	Like said before, this first MD3's texture-coordinates will also be used for any frames that will be added.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_12.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>Here i choose the initial model. This model will make the first frame of the animation.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_13.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>The MD3 is loaded. Not yet animated, just the static car..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_14.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Adding frame[0] from another MD3</TD></TR>
+	<TR class=BG0><TD>With the initial model loaded, select the choice from the menu:<BR>
+	'Add Frame[0] From...'</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_15.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>Now select the MD3 with the second frame of the animation: lowlow_bump_0.MD3</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_16.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>1 frame has been added</TD></TR>
+	<TR class=BG0><TD>Once a frame has been added, You can see that the animation-length has increased by a frame.<BR>
+	There is also a message in the statusbar, indicating the addition.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/AddFrame0_17.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Adding more frames to the animation</TD></TR>
+	<TR class=BG0><TD>Repeat the same steps to add the other frames to make the final animated MD3.<BR>
+	Once all frames are added, You can save the model; It will then be saved as an animated MD3.<BR>
+	<BR>
+	You could also edit more of the model, like i did. I changed the shadernames because the demo-MD3 has been placed in another folder. I also smoothed the surface of the windshield so it doesn't look that blocky anymore.<BR>
+	<BR>
+	The animated model of the lowrider is included in this file: <A href="../demomodels.zip">demomodels.zip</A></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Starting an animation from mapscript</TD></TR>
+	<TR class=BG0><TD>From mapscript the animation can be started with the 'startanimation'-command.<BR>
+	In my case the final model has 8 frames. My first frame is not really part of the animation-loop, so i skip it. The script-command for my demo-model would then be:<BR>
+	<BR>
+	&nbsp;&nbsp;&nbsp;&nbsp;<I>startanimation 1 7 12 norandom</I><BR>
+	<BR>
+	Note: The first frame of an animation has the frame-number 0 (not 1)..<BR>
+	<BR>
+	Of course the model i made, is just for this example. It can be different in Your own cases (meaning framenumbers).</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Restrictions</TD></TR>
+	<TR class=BG0><TD>All files that are used to combine the final MD3 must contain the same model. That is, the files must have:<BR>
+	<LI type=square>the same number of surfaces,</LI><BR>
+	<LI type=square>the same shaders,</LI><BR>
+	<LI type=square>the same number of vertices per surface,</LI><BR>
+	<LI type=square>the same number of tags.</LI><BR>
+	You will get an error-message if one of those criteria is not met, and no frame will be added.</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Thanks</TD></TR>
+	<TR class=BG0><TD>Thanks to <B>meat</B> for his permission to use his model as a blueprint for this example.<BR>
+	<A href="http://www.badmeat.com/" target=_blank>www.badmeat.com</A><BR>
+	<BR>
+	I also included meat's original model for download: <A href="../lowlow.zip">lowlow.zip</A></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>

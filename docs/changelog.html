@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<TITLE>ET Model Tool - Changelog</TITLE>
+<LINK rel="stylesheet" type="text/css" href="normal.css">
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<TABLE border="0" cellspacing="0" rowspacing="3" cols="1">
+	<TR class=BG1T><TD class=BG1T colspan=2>Changes since previous version</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>MAP -> MD3: Use any shaped brush</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>It's no longer necessary to use 6 sided brushes in the .map model.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>MD3 "Surfaces Compact" option added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>It compresses as many surfaces as possible. Surfaces must all have the same shader. The maximum amount of vertices and triangles per surface is not exceeded, but You can load models that have up to 4 times the MD3-limit of vertex-per-surface.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>MD3 swap texture-coordinates UV-ST option added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>For swapping texture-coordinates from ST to UV, or vice versa.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Display of groundplane & axis option added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>The groundplane is the "floor". It's positioned at the same height as the model's origin.<BR>
+The (positive) axis coloring: X-axis = red, Y-axis = green, Z-axis = blue.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Small fixes</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>Some minor fixes were made for problems related to: file-in-use, screen-flickering, INI-save/restore, texturing..</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Previous changes/additions/fixes</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>MDM recalculate surface-normals option added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>This options lets You calculate the surface-normals for MDM playermodels.<BR>
+It also works for playermodels that are converted into MDM on load-time.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Adding tag-axis (direction) option added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>It is possible now to manually add tags that are not aligned on the default axis.<BR>
+You can enter the 9 values for the 3 different axis (X,Y,Z) now..</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Game PAK handling fixes</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>If one of the PAKs did not contain a relevant file, the open-dialog did not open anymore.<BR>
+There were also some other related issues, which also should be solved now..</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Game PAK search list added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>The tool will search all the listed game PAK-files for needed files such as textures, shader and/or models.</LI><BR>
+This option makes the tool more easy to use for people who do not model for Wolfenstein-ET (only).<BR>
+Any Quake3-based game that uses PAK-files (*.pk3) is therefore supported..<BR>
+The user can maintain the list; Add other PAK-files & remove files from the list.</TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>tcMod bug fixed</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>There was a bug in the previous code, which displayed some models incorrectly.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Drag'n'Drop</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>The following filetypes can also be drag'n'dropped onto the tool's window: MS3D, ASE.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Mouse Control Type</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>On-screen model rotation handling method added.</LI><BR>
+It provides another, likely for most people a more intuitive way of rotating the model on screen..</TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>ASE loading improved</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>An ASE-model that would exceed the MD3 coordinate-limits (-511 to 511) can now be scaled down so it can be saved as MD3.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Editing surface-names option added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>It is now possible to change the surfacenames.</LI><BR>
+Select a surface from the list, edit the name, and press ENTER to confirm the changes..</TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Some tcMod shader-features added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>Shaders that use <I>tcMod scroll</I> and/or <I>tcMod rotate</I> do now show scrolling and/or rotating textures.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Alpha-channel textures handling improved</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>Displaying of transparent/translucent textures is improved, which makes it look much better now.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Drag'n'Drop</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>The following filetypes can be drag'n'dropped onto the tool's window: MD3, MAP, MDS, SKIN, MDM/MDX.</LI><BR>
+Drop only 1 file when using MD3,MAP,MDS or SKIN files.<BR>
+Drop 2 files at once when using MDM/MDX files.</TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Mirroring MD3 models routine corrected</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>The mirroring of MD3-model along the X-,Y- or Z-axis is now correct.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Reverse triangle winding option added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>The winding of triangles can now be reversed (CCW->CW, CW->CCW).</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Loading Milkshape files option added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>Milkshape .MS3D files can be converted to MD3.</LI><BR>
+No animations, skeleton/bones nor tags are supported yet..<BR>
+There is however an automatic scale-down feature, in case the model would exceed the MD3-boundries.</TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Loading 3DSMax ASCII files option added</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>The old 3D-Studio .ASE files can be converted to MD3.</LI><BR>
+No animations are supported yet..</TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>MAP to MD3 convert</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>Textures of any dimension can be used.</LI><BR>
+Place custom textures in the same folder as the .map You want to convert, or use ET-textures..
+<LI style=square>Adding tags improved, also saving tags (as .tag file) is now possible</LI>
+<LI style=square>Brush-planes to face-vertices routine slightly improved.</LI>
+<LI style=square>Calculation of texture-coordinates improved.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><B>Shaders</B>:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>Shaders with only translucent textures are no longer displayed translucent when they also contain a lightmap-stage.</LI></TD></TR></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Known issues</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD><I>Wolfenstein-ET Churchill tank:</TD></TR>
+<TR class=BG0><TD><TABLE><TR><TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD><LI style=square>The undamaged Churchill tank is displayed incorrectly because of some shader-issue.<BR>
+The damaged Churchill tank however, which uses the very same shader, is displayed correctly..<BR>
+And i just can't see why this happens.</I></TD></TR></TABLE></TD></TR>
+	
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>

@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<TITLE>ET Model Tool - MAP To MD3</TITLE>
+<LINK rel="stylesheet" type="text/css" href="normal.css">
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<TABLE border="0" cellspacing="0" rowspacing="3" cols="1">
+	<TR class=BG1T><TD class=BG1T colspan=2>Converting .MAP To .MD3</TD></TR>
+	<TR class=BG0><TD>To convert a model that was made in Radiant from MAP to MD3, build just the model from normal worldspawn-brushes, do not add entities (they will be ignored by the tool).<BR>
+	Here i have made a model of a king.. You see there is no hull in my "map".</TD></TR>
+	<TR class=BG0><TD><IMG src="img/MapToMD3_0.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Create the model around the origin in Radiant</TD></TR>
+	<TR class=BG0><TD>Create Your model around the origin in Radiant. The origin is at coordinates (0,0,0). Your model will later rotate around this origin.<BR>
+	So if You create Your model at say (100,0,0), it will later rotate around the origin in a circle that is 200 units wide. This is probably not what You want..</TD></TR>
+	<TR class=BG0><TD><TABLE><TR><TD><IMG src="img/MapToMD3_3.jpg" border="4">&nbsp;</TD><TD><IMG src="img/MapToMD3_1.jpg" border="4">&nbsp;</TD><TD><IMG src="img/MapToMD3_2.jpg" border="4"></TD></TABLE></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Use common/caulk on the faces You don't want to see in the end-model</TD></TR>
+	<TR class=BG0><TD>Brushfaces that have a 'common/'-shader on a side, will not produce triangles in Your final model.<BR>
+	So it is allowed to use the common-shaders on any side of a brush. Just like in a normal map, use the common/caulk shader on every face that nobody can see.<BR>
+	If You do not use a common-shader on invisible faces, You will sooner hit the limit on max. vertices.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/MapToMD3_5.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>The use of brushes</TD></TR>
+	<TR class=BG0><TD>Use quad- and/or triangle-shaped brushes only, do not use brushes with sides that have more than 4 vertices.<BR>
+	If You do use brushes that have more than 4 vertices in a face, You will get a warning, and the model will not be converted..<BR>
+	Here i have selected some brushes of my model. This king is completely made from quad-shaped brushes.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/MapToMD3_4.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>Here is an example of the model of a knight. This model is made from a mix of quad- & triangle-shaped brushes.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/MapToMD3_6.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>In Radiant 2D-View You can easily see that the knight is made up from mainly triangle-shaped brushes.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/MapToMD3_7.jpg" border="4"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Converting the Radiant-model to MD3</TD></TR>
+	<TR class=BG0><TD>Once You made a model in Radiant, and want to convert it to an MD3, all You have to do is loading the "map-model" in the ET-Model-Tool..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/MapToMD3_8.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Converted while loaded</TD></TR>
+	<TR class=BG0><TD>Here is the map-model, already converted to MD3.<BR>
+	The converting is done immediately. If the model is too big for converting, You will get an error-message and no model is shown in the tool..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/MapToMD3_9.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Saving the MD3</TD></TR>
+	<TR class=BG0><TD>If the Radiant-model has loaded, and has been converted, You can save it as an MD3.<BR>
+	All You have to do is select the "Save As..." choice from the menu.<BR>
+	Note: After loading a .map-file, You can only save it as an MD3, not as any other type of model..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/MapToMD3_10.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Restrictions</TD></TR>
+	<TR class=BG0><TD>This version of the ET-Model-Tool can only use:<BR>
+	<LI type=square>brushes that have brushsides with no more than 4 vertices,</LI>
+	<LI type=square>(v1.4.0 only) Textures that are 256x256 pixels (width/height), (v1.4.1 can use any size texture)</LI><BR>
+	<BR>
+	<LI type=square>Vertex-positions that are within the range: -512 to 512 units in any direction (X,Y and Z),</LI><BR>
+	<I>This is a restriction inherited from the MD3-format. MD3 simply cannot store vertices with greater coordinates..</I></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>

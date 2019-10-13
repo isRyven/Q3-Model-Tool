@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+<TITLE>ET Model Tool - Level Of Detail</TITLE>
+<LINK rel="stylesheet" type="text/css" href="normal.css">
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<TABLE border="0" cellspacing="0" rowspacing="3" cols="1">
+	<TR class=BG1T><TD class=BG1T colspan=2>Level Of Detail</TD></TR>
+	<TR class=BG0><TD>Playermodels in ET are build-up from a lot of triangles. Each triangle is a face, made of (of course) 3 vertices.<BR>
+	To gain some speed in rendering, the game can lower the detail of playermodel. Depending on the distance to a playermodel, the game will draw a somewhat different version of the model. The further away the model is, the less detailed it will be drawn. The closer it gets to the viewer, the more detail is brought back into the playermodel. This feature is called Level-Of-Detail, or in short: LOD.<BR>
+	There is a limit of how much the original model (the highest possible LOD) will be lowered in detail. The lowest LOD is called the LOD_minimum. The LOD_minimum is a value indicating the number of vertices that are used to draw the playermodel. If the LOD_minimum has been reached, the game will stop lowering LOD, even when the model is moving further and further away.<BR>
+	The LOD-data is stored in a model, and has to be calculated only once. While playing, the game will automaticly change LOD on playermodels, and nothing has to be calculated again.<BR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG1T><TD class=BG1T colspan=2>In-game examples of changing LOD</TD></TR>
+	<TR class=BG0><TD><IMG src="img/axismedic_highdetail.jpg" border="4">&nbsp;<IMG src="img/axismedic_lowdetail.jpg" border="4">&nbsp;&nbsp;<IMG src="img/axisfieldops_highdetail.jpg" border="4">&nbsp;<IMG src="img/axisfieldops_lowdetail.jpg" border="4"></TD></TR>
+	<TR class=BG0><TD class=TDnote><I>notice the right-elbow of the medic, and the back of the fieldops..</I></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>ET's original playermodels all have LOD-data in the models already, but if You are creating Your own playermodels this LOD-data may not be present at all.<BR>
+	If a playermodel has no LOD-data, triangles can go invisible, and the model will look wrong.</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Calculating LOD</TD></TR>
+	<TR class=BG0><TD>This tool can calculate the data needed for LOD. On the 'View'-Tab on the 'LOD'-panel it shows the status of the LOD-data in a model. The status can be present, absent or calculated.<BR>
+	The next image shows an original playermodel, loaded from the game. You see that the LOD-data is 'present':</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_0.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Custom model without LOD</TD></TR>
+	<TR class=BG0><TD>Here is a playermodel that has no LOD-data. The 'LOD'-panel info shows it: 'absent'</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_1.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Adding LOD-data</TD></TR>
+	<TR class=BG0><TD>To calculate LOD for a playermodel is done by choosing the choice from the menu:<BR>
+	"Calculate LOD"</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_2.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>LOD is now calculated</TD></TR>
+	<TR class=BG0><TD>After the Level-Of-Detail has been calculated by the tool, the status on the 'LOD'-panel will indicate: 'calculated'</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_3.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Enabling LOD</TD></TR>
+	<TR class=BG0><TD>At first, You will see no difference on the playermodel. Only after enabling LOD the model will be displayed on the lowest Level-Of-Detail.<BR>
+	As You can see, the model doesn't look too well. The LOD_minimum is set too low, and the triangles are connected in a freaky way..<BR>
+	Note: Enabling or disabling LOD with the checkbox does only toggle the displaying of the LOD model (vs. the normal view). It does not calculate anything, it just switches display-modes..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_4.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Adjusting manually</TD></TR>
+	<TR class=BG0><TD>I've drawn a red line, to indicate a region of the model that looks incorrect. The legs certainly need a higher value for LOD_minimum.<BR>
+	Note: The LOD-routine works on surfaces. So select the surface for the legs now to start adjusting the LOD_minimum.<BR>
+	The initial value for LOD_minimum of the legs is: 172 (from a total of 259 vertices in the legs-surface).</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_5.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Increase the LOD_minimum per surface</TD></TR>
+	<TR class=BG0><TD>Increase the LOD_minimum for the legs by using the slider.<BR>
+	Note: You can drag the slider with the mouse. You can also select the slider, and then use the left- & right-arrow keys for finer control.<BR>
+	Keep increasing the value until the legs look good enough (from this viewed angle). In this example the legs look well enough at about 193 vertices.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_6.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Checking from all angles</TD></TR>
+	<TR class=BG0><TD>Rotate the view to check the surface from different angles.<BR>
+	If You see more bad spots, keep increasing the value until the surface looks good enough again.<BR>
+	You see that the legs still show a weird outline when viewed from this side:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_7.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Correcting until the surface is done</TD></TR>
+	<TR class=BG0><TD>After increasing the surface LOD_minimum to about 198, the legs look well.<BR>
+	Note: It all depends on the shape of Your playermodel what values are needed for a surface. For example the axis-fieldops with his long jacket will need different values.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_8.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Adjusting the next surface</TD></TR>
+	<TR class=BG0><TD>Now that the legs are done, it's time to correct the next surface.<BR>
+	The body shows a bad outline, so it needs some adjusting too. Select the surface with the up/down-control on the 'LOD'-panel.<BR>
+	You see that the current value for LOD_minimum for this surface is set to 156.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_9.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Increasing LOD for this surface</TD></TR>
+	<TR class=BG0><TD>Like before, keep increasing the minimum until the model looks well enough from this side.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_10.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>View the model from different angles, and check its outline.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_11.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>If nessecary, increase the LOD_minimum again, until it looks well enough.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_12.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>When seen from the top, there is a bad "gap" where the upper-chest should be:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_13.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>Correct it..<BR>
+	Meanwhile the LOD_minimum value has reached about 181 by now..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_14.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Correcting all other surfaces</TD></TR>
+	<TR class=BG0><TD>Go through all surfaces, and keep correcting them.<BR>
+	Here is a view on the hands, after correction.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_15.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>The final result</TD></TR>
+	<TR class=BG0><TD>When all surfaces are corrected, the final model could look like this:</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_16.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+
+	<TR class=BG1T><TD class=BG1T colspan=2>Saving the playermodel</TD></TR>
+	<TR class=BG0><TD>Save the playermodel. The LOD-data will be stored in the model.<BR>
+	This playermodel can now be used in the game, and will not "loose" its triangles anymore..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/LOD_17.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>

@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>ET Model Tool - MD3 Editing Options</TITLE>
+<LINK rel="stylesheet" type="text/css" href="normal.css">
+</HEAD>
+<BODY>
+<BR>
+<BR>
+<TABLE border="0" cellspacing="0" rowspacing="3" cols="1">
+	<TR class=BG1T><TD class=BG1T colspan=2>Fixing cracks and gaps</TD></TR>
+	<TR class=BG0><TD>If Your model is not correctly made, it can show cracks or gaps on the edges of brushfaces. These gaps can be created when You have verticles that are not on the grid, and You then want to move the vertices (while they snap to the grid again)..<BR>
+	There is an option that tries to get rid of the gaps by "welding" vertices which positions are almost the same.<BR>
+	Here is an example of a pawn that shows several gaps. You can see the edges do not perfectly fit together.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/FixingGaps_0.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Select the surface for correcting gaps</TD></TR>
+	<TR class=BG0><TD>First, select the surface You want to try to correct. Because the routine works on 1 surface only, You need to select, and correct, every surface seperately.<BR>
+	You must select the current surface from the dropdown-listbox on the "Surfaces"-Tab.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/FixingGaps_1.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Select the option from the menu</TD></TR>
+	<TR class=BG0><TD>Once You have selected the proper surface for correction, select the choice from the menu:<BR>
+	"Fix cracks & gaps for current surface".</TD></TR>
+	<TR class=BG0><TD><IMG src="img/FixingGaps_2.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Select the maximal weld-distance</TD></TR>
+	<TR class=BG0><TD>This next dialog shows a question and wants some user-input. It asks for the "max. distance" (in game-units) for welding vertices.<BR>
+	Depending on the size of Your model, You can change this value as You like.. The default value will weld vertices that are within eachother's range of 0.15 units.<BR>
+	If You manually set this value to a bigger number, You can get some undesired results, because too many vertices will be joined together.. So, do not make this value too big. If Your model gets distorted, You must reload it and try again with a smaller value..</TD></TR>
+	<TR class=BG0><TD><IMG src="img/FixingGaps_3.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	
+	<TR class=BG1T><TD class=BG1T colspan=2>Cracked & Gaps are gone, woohoo!..</TD></TR>
+	<TR class=BG0><TD>If all went well, the cracks & gaps are gone, and the edges of neighbouring sides are touching again.</TD></TR>
+	<TR class=BG0><TD><IMG src="img/FixingGaps_4.jpg"></TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+	<TR class=BG0><TD>&nbsp;</TD></TR>
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>

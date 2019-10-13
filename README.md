@@ -17,5 +17,8 @@ The code is written in Pascal, and was originally built using `Delphi 7` IDE.
 ## Documentation
 Documentation can be read online here https://isryven.github.io/Q3-Model-Tool/
 
+## Useful links
+* A modern version of q3-games model tool as blender plugin: https://github.com/mino-git/rtcw-wet-blender-model-tools
+
 ## License
 MIT

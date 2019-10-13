@@ -2,7 +2,7 @@
 
 ![Q3 Model Tool](../master/docs/img/RotateMD3_0.jpg)
 
-Original `Q3-games Model Tool` for playermodel-makers, mappers and modders. Made by @core-c.
+Original `Q3-games Model Tool` for playermodel-makers, mappers and modders. Made by [@core-c](https://github.com/core-c).
 
 ### Key features
 * Calculation of LOD for playermodels, the user can manually adjust the LOD-Minimum per surface, and see the model-detail change on screen.
@@ -13,6 +13,9 @@ Original `Q3-games Model Tool` for playermodel-makers, mappers and modders. Made
 
 ## Compiling
 The code is written in Pascal, and was originally built using `Delphi 7` IDE.
+
+## Documentation
+Documentation can be read online here https://isryven.github.io/Q3-Model-Tool/
 
 ## License
 MIT
